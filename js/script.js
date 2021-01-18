@@ -120,36 +120,36 @@ function gocalcule()
 
 					if(($diff_dol) >= 0)
 					{
-						$('#pricetoday').removeClass("w3-bar w3-leftbar w3-border-red w3-pale-red").addClass("w3-round-large w3-bar w3-leftbar w3-border-green w3-pale-green");
+						$('#pricetoday').removeClass("w3-bar w3-leftbar w3-border-red w3-pale-red").addClass("w3-bar w3-leftbar w3-border-green w3-pale-green");
 						$('#gain').html("<b class='w3-text-green'>+"+$diff_dol+"$ (+"+$diff_dolperc+"%)");
 					}
 					else
 					{
-						$('#pricetoday').removeClass("w3-bar w3-leftbar w3-border-green w3-pale-green").addClass("w3-round-large w3-bar w3-leftbar w3-border-red w3-pale-red");
+						$('#pricetoday').removeClass("w3-bar w3-leftbar w3-border-green w3-pale-green").addClass("w3-bar w3-leftbar w3-border-red w3-pale-red");
 						$('#gain').html("<b class='w3-text-red'>"+$diff_dol+"$ ("+$diff_dolperc+"%)");
 					}
 
 					$('#nbbtc').html($tot_btcprice.toFixed(6)+"<b>&#8383;</b>");
 					if(($diff_btc) >= 0)
 					{
-						$('#pricetodaybtc').removeClass("w3-bar w3-leftbar w3-border-red w3-pale-red").addClass("w3-round-large w3-bar w3-leftbar w3-border-green w3-pale-green");
+						$('#pricetodaybtc').removeClass("w3-bar w3-leftbar w3-border-red w3-pale-red").addClass("w3-bar w3-leftbar w3-border-green w3-pale-green");
 						$('#gainbtc').html("<b class='w3-text-green'>+"+$diff_btc+"$ (+"+$diff_btcperc+"%)");
 					}
 					else
 					{
-						$('#pricetodaybtc').removeClass("w3-bar w3-leftbar w3-border-green w3-pale-green").addClass("w3-round-large w3-bar w3-leftbar w3-border-red w3-pale-red");
+						$('#pricetodaybtc').removeClass("w3-bar w3-leftbar w3-border-green w3-pale-green").addClass("w3-bar w3-leftbar w3-border-red w3-pale-red");
 						$('#gainbtc').html("<b class='w3-text-red'>"+$diff_btc+"$ ("+$diff_btcperc+"%)");
 					}
 
 					$('#nbeth').html($tot_ethprice.toFixed(6)+"<b>&#926;</b>");
 					if(($diff_btc) >= 0)
 					{
-						$('#pricetodayeth').removeClass("w3-bar w3-leftbar w3-border-red w3-pale-red").addClass("w3-round-large w3-bar w3-leftbar w3-border-green w3-pale-green");
+						$('#pricetodayeth').removeClass("w3-bar w3-leftbar w3-border-red w3-pale-red").addClass("w3-bar w3-leftbar w3-border-green w3-pale-green");
 						$('#gaineth').html("<b class='w3-text-green'>+"+$diff_eth+"$ (+"+$diff_ethperc+"%)");
 					}
 					else
 					{
-						$('#pricetodayeth').removeClass("w3-bar w3-leftbar w3-border-green w3-pale-green").addClass("w3-round-large w3-bar w3-leftbar w3-border-red w3-pale-red");
+						$('#pricetodayeth').removeClass("w3-bar w3-leftbar w3-border-green w3-pale-green").addClass("w3-bar w3-leftbar w3-border-red w3-pale-red");
 						$('#gaineth').html("<b class='w3-text-red'>"+$diff_eth+"$ ("+$diff_ethperc+"%)");
 					}
 				}

@@ -41,12 +41,12 @@
 	  <select class="w3-input w3-border w3-round-large" id="choicetoken" autofocus="true"></select>
 
 	  <label class="" for="numb"><b>Nombre de token</b></label>
-	  <input class="w3-input w3-border w3-round-large" id="numb" type="number" value="351">
+	  <input class="w3-input w3-border w3-round-large" id="numb" type="number" value="1">
 
 	  <label class="" for="date"><b>Date d'achat</b></label>
-	  <input class="w3-input w3-border w3-round-large" id="date" type="date" value="2019-12-18">
-
-	  <input onclick="gocalcule()" class="w3-btn w3-blue-grey w3-center" type="submit" value="Envoyer">
+	  <input class="w3-input w3-border w3-round-large" id="date" type="date" value="2020-01-01">
+	  <br />
+	  <input onclick="gocalcule()" class="w3-btn w3-blue-grey w3-block w3-round-xlarge" type="submit" value="Envoyer">
 	</form>
 
 	<div id="rslt" class="w3-container w3-light-grey w3-card-2 w3-padding-24 w3-round-xlarge w3-margin-top w3-modal">		
@@ -55,59 +55,62 @@
 		  <div class="w3-center w3-xxxlarge w3-wide w3-opacity" id="tokenname"></div>
 		</div>
 
-		<ul class="w3-ul">
-		    <li class="w3-bar">
-		      <i class='fas fa-dollar-sign fa-2x w3-bar-item w3-circle w3-hide-small w3-green'></i>
-		      <div class="w3-bar-item">
-		        <span class="w3-large">Prix d'achat $/token</span><br />
-		        <span id="dolprice"></span><br />
-		        <span name="nbtoken"></span> token = <span id="totdolprice"></span>
-		      </div>
-		    </li>
+		<div class="w3-row">
+			<ul class="w3-ul w3-half">
+			    <li class="w3-bar">
+			      <i class='fas fa-dollar-sign fa-2x w3-bar-item w3-circle w3-hide-small w3-green'></i>
+			      <div class="w3-bar-item">
+			        <span class="w3-large">Prix d'achat $/token</span><br />
+			        <span id="dolprice"></span><br />
+			        <span name="nbtoken"></span> token = <span id="totdolprice"></span>
+			      </div>
+			    </li>
 
-		    <li class="w3-bar">
-		      <i class='fab fa-btc fa-2x w3-bar-item w3-circle w3-hide-small w3-orange w3-text-white'></i>
-		      <div class="w3-bar-item">
-		        <span class="w3-large">Prix d'achat BTC/token</span><br />
-		        <span id="btcprice"></span><br />
-		        <span name="nbtoken"></span> token = <span id="totbtcprice"></span>
-		      </div>
-		    </li>
+			    <li class="w3-bar">
+			      <i class='fab fa-btc fa-2x w3-bar-item w3-circle w3-hide-small w3-orange w3-text-white'></i>
+			      <div class="w3-bar-item">
+			        <span class="w3-large">Prix d'achat BTC/token</span><br />
+			        <span id="btcprice"></span><br />
+			        <span name="nbtoken"></span> token = <span id="totbtcprice"></span>
+			      </div>
+			    </li>
 
-		    <li class="w3-bar">
-		      <i class='fab fa-ethereum fa-2x w3-bar-item w3-circle w3-hide-small w3-indigo'></i>
-		      <div class="w3-bar-item">
-		        <span class="w3-large">Prix d'achat ETH/token</span><br />
-		        <span id="ethprice"></span><br />
-		        <span name="nbtoken"></span> token = <span id="totethprice"></span>
-		      </div>
-		    </li>
-		    <hr noshade="">
-		    <li id="pricetoday" class="w3-bar w3-leftbar">
-		    	<i class='fas fa-dollar-sign fa-2x w3-bar-item w3-circle w3-hide-small w3-green'></i>
-		    	<div class="w3-bar-item">
-		        <span class="w3-large">Prix du token aujourd'hui</span><br />
-		        <span id="dolpricetoday"></span><br />
-		        <span name="nbtoken"></span> token = <span id="totdolpricetoday"></span> || <span id="gain"></span>
-		      </div>
-		    </li>
+			    <li class="w3-bar">
+			      <i class='fab fa-ethereum fa-2x w3-bar-item w3-circle w3-hide-small w3-indigo'></i>
+			      <div class="w3-bar-item">
+			        <span class="w3-large">Prix d'achat ETH/token</span><br />
+			        <span id="ethprice"></span><br />
+			        <span name="nbtoken"></span> token = <span id="totethprice"></span>
+			      </div>
+			    </li>
+			</ul>
+			<ul class="w3-ul w3-half">
+			    <li id="pricetoday" class="w3-bar w3-leftbar">
+			    	<i class='fas fa-dollar-sign fa-2x w3-bar-item w3-circle w3-hide-small w3-green'></i>
+			    	<div class="w3-bar-item">
+			        <span class="w3-large">Prix du token aujourd'hui</span><br />
+			        <span id="dolpricetoday"></span><br />
+			        <span name="nbtoken"></span> token = <span id="totdolpricetoday"></span> || <span id="gain"></span>
+			      </div>
+			    </li>
 
-		    <li id="pricetodaybtc" class="w3-bar w3-leftbar">
-		    	<i class='fab fa-btc fa-2x w3-bar-item w3-circle w3-hide-small w3-orange w3-text-white'></i>
-		    	<div class="w3-bar-item">
-		        <span class="w3-large">Si swap pour BTC</span><br />
-		        <span id="nbbtc"></span> = <span id="totbtcpricetoday"></span> || <span id="gainbtc"></span>
-		      </div>
-		    </li>
+			    <li id="pricetodaybtc" class="w3-bar w3-leftbar">
+			    	<i class='fab fa-btc fa-2x w3-bar-item w3-circle w3-hide-small w3-orange w3-text-white'></i>
+			    	<div class="w3-bar-item">
+			        <span class="w3-large">Si swap pour BTC</span><br />
+			        <span id="nbbtc"></span> = <span id="totbtcpricetoday"></span> || <span id="gainbtc"></span>
+			      </div>
+			    </li>
 
-		    <li id="pricetodayeth" class="w3-bar w3-leftbar">
-		    	 <i class='fab fa-ethereum fa-2x w3-bar-item w3-circle w3-hide-small w3-indigo'></i>
-		    	<div class="w3-bar-item">
-		        <span class="w3-large">Si swap pour ETH</span><br />
-		        <span id="nbeth"></span> = <span id="totethpricetoday"></span> || <span id="gaineth"></span>
-		      </div>
-		    </li>
-		</ul>
+			    <li id="pricetodayeth" class="w3-bar w3-leftbar">
+			    	 <i class='fab fa-ethereum fa-2x w3-bar-item w3-circle w3-hide-small w3-indigo'></i>
+			    	<div class="w3-bar-item">
+			        <span class="w3-large">Si swap pour ETH</span><br />
+			        <span id="nbeth"></span> = <span id="totethpricetoday"></span> || <span id="gaineth"></span>
+			      </div>
+			    </li>
+			</ul>
+		</div>
 	</div>
   </body>
 </html>
